@@ -14,9 +14,8 @@ class UsersController < ApplicationController
   def create
 
     begin
-      @keys =  (JSON.parse request.body.read).keys
 
-      if @keys.include?("id")
+      if params.has_key?(:id)
           json_response({ :error => "No se puede crear usuario con id" }, 400)
       else
         @user = User.create!(user_params)
@@ -29,14 +28,21 @@ class UsersController < ApplicationController
 
   # POST /users/:id
   def update
-    @keys =  (JSON.parse request.body.read).keys
+    
+    begin
 
-    if @keys.include?("id")
-        json_response({ :error => "id no es modificable" }, 400)
-    else
-      @user.update(user_params)
-      head :no_content
+      @keys =  (JSON.parse request.body.read).keys
+      if @keys.include?("id")
+          json_response({ :error => "id no es modificable" }, 400)
+      else
+        @user.update(user_params)
+        json_response(@user, 200)
+      end
+
+    rescue
+        json_response({ :error => "La modificación ha fallado" }, 500)
     end
+
   end
 
   # GET /users/:id
@@ -46,12 +52,8 @@ class UsersController < ApplicationController
 
   # DELETE /users/:id
   def destroy
-    if @user 
       @user.destroy
       head :no_content
-    else
-      json_response({ :error => "Usuario no encontrado" }, 404)
-    end
   end
 
   private
