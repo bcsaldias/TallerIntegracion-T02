@@ -1,24 +1,7 @@
-# README
+# IIC3103 - Taller de Integración - 2017-1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Se presenta una API de juguete, de administración de usuarios. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Framework: Ruby on Rails 5.0
+- Motor de base de datos: PostgresQL
+- Deploy: Hobby Dev, http://http://bcsaldias-iic3103-t02.herokuapp.com/ 
