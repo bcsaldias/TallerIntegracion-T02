@@ -2,27 +2,27 @@ class UsersController < ApplicationController
 
   before_action :set_user, only: [:show, :update, :destroy]
 
-  # GET /usernames
+  # GET /users
   def index
     @users = User.all
     json_response(@users)
   end
 
-  # POST /users
+  # PUT /users
   def create
     @user = User.create!(user_params)
     json_response(@user, :created)
   end
 
-  # GET /users/:id
-  def show
-    json_response(@user)
-  end
-
-  # PUT /users/:id
+  # POST /users/:id
   def update
     @user.update(user_params)
     head :no_content
+  end
+
+  # GET /users/:id
+  def show
+    json_response(@user)
   end
 
   # DELETE /users/:id
