@@ -5,3 +5,6 @@ Se presenta una API de juguete, de administración de usuarios.
 - Framework: Ruby on Rails 5.0
 - Motor de base de datos: PostgresQL
 - Deploy: Hobby Dev, http://http://bcsaldias-iic3103-t02.herokuapp.com/ 
+
+
+![alt tag](https://github.com/bcsaldias/TallerIntegracion-T02/blob/master/doc/model-t02.png)
