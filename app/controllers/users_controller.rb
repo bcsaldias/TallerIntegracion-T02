@@ -36,6 +36,7 @@ class UsersController < ApplicationController
           json_response({ :error => "id no es modificable" }, 400)
       else
         @user.update(user_params)
+        @user = User.find(params[:id])
         json_response(@user, 200)
       end
 
