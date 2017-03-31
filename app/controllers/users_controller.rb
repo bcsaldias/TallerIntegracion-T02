@@ -31,12 +31,13 @@ class UsersController < ApplicationController
     
     begin
 
-      @keys =  (JSON.parse request.body.read).keys
+      @body =  JSON.parse request.body.read
+      @keys = @body.keys
       if @keys.include?("id")
           json_response({ :error => "id no es modificable" }, 400)
+      
       else
-        @user.update(user_params)
-        @user = User.find(params[:id])
+        @user.update(@body)
         json_response(@user, 200)
       end
 
