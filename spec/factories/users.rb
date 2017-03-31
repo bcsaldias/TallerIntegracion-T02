@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :user do
-    username { Faker::Lorem.word }
-    name { Faker::Lorem.word }
-    last_name { Faker::Lorem.word }
+    usuario { Faker::Lorem.word }
+    nombre { Faker::Lorem.word }
+    apellido { Faker::Lorem.word }
     twitter { Faker::Lorem.word }
   end
 end

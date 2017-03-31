@@ -9,6 +9,6 @@ RSpec.describe User, type: :model do
   # Association test
   # Validation tests
   # ensure columns title and created_by are present before saving
-  it { should validate_presence_of(:username) }
-  it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:usuario) }
+  it { should validate_presence_of(:nombre) }
 end
